@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { useWindowPosition } from "../../hooks";
 
 const Container = styled.div`
   flex: 1;
   width: 100%;
+  ${props => props.yPosition && `
+    transform: translate(${props.yPosition}px, ${props.yPosition * 0.6}px);
+  `}
 `;
 
 const Image = styled.img`
@@ -11,8 +15,11 @@ const Image = styled.img`
 `;
 
 const GreetImage = () => {
+
+  const scrollPosition = useWindowPosition()
+
   return (
-    <Container>
+    <Container yPosition={scrollPosition}>
       <Image src="./images/person.png" alt="" />
     </Container>
   );

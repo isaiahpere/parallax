@@ -6,6 +6,7 @@ const Container = styled.div`
   background: url("./images/bg1.png");
   display: flex;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Title = styled.h2`
