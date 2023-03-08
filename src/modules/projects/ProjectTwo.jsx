@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { useWindowPosition } from '../../hooks'
 
 const Section = styled.div` 
   height: 100vh;
@@ -17,6 +18,12 @@ const Laptop = styled.div`
   width: 300px;
   height: 379px;
   order: 2;
+
+  @media (min-width: 1440px){
+  ${props => props.position && `
+    transform: translateX(calc(-340vh + ${props.position * 0.6}px));
+  `}
+  }
 `
 
 const LaptopContainer = styled.div`
@@ -101,9 +108,11 @@ const Button = styled.button`
 `
 
 const ProjectTwo= () => {
+  const position = useWindowPosition()
+
   return (
     <Section>
-      <Laptop>
+      <Laptop position={position}>
         <LaptopContainer>
           <LaptopShellContainer>
             <LaptopShell src="./images/laptop.png" alt=""/>

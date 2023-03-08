@@ -5,9 +5,13 @@ import { useWindowPosition } from "../../hooks";
 const Container = styled.div`
   flex: 1;
   width: 100%;
-  ${props => props.yPosition && `
-    transform: translate(${props.yPosition}px, ${props.yPosition * 0.6}px);
+
+
+  @media (min-width: 1440px){
+    ${props => props.yPosition && `
+    transform: translate(${props.yPosition * 0.4}px, ${props.yPosition * 0.6}px);
   `}
+  }
 `;
 
 const Image = styled.img`

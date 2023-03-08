@@ -13,3 +13,5 @@ export const boxList = [
     79, 80, 118, 119, 159, 160, 161, 162, 200, 201, 202, 203, 241, 242, 282,
     283, 284, 285, 323, 324, 325, 326,
   ];
+
+export const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Nov", "Dec"]

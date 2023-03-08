@@ -11,7 +11,12 @@ const Greet = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
+
+  @media (min-width: 768px){
+    flex-direction: row;
+  }
 `;
 
 const Intro = () => {
@@ -21,8 +26,8 @@ const Intro = () => {
         <GreetText />
         <GreetImage />
       </Greet>
-      <Name />
-      <Job />
+      {/* <Name />
+      <Job /> */}
     </Section>
   );
 };

@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components/macro";
+import {BsGithub} from "react-icons/bs"
 
 
 import { boxList } from "../../data/box";
+import { months } from "../../data/box";
 
 const Section = styled.section`
   height: 100vh;
   background-color: #302f2f;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
   flex-direction: column;
   color: #625d5d;
 `;
@@ -38,6 +41,7 @@ const Box = styled.div`
 
 const GithubChart = styled.div`
   width: 820px;
+  margin-top: 20px;
 
   &:hover ${Box}:nth-child(2n) {
     background-color: #063f24;
@@ -63,12 +67,30 @@ const BoxContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  
 
 `
 
 const GithubTitle = styled.div`
   font-size: 100px;
   text-align: center;
+`
+
+const IconContainer = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`
+
+const GithubIcon = styled(BsGithub)`
+  color: white;
+  font-size: 100px;
 `
 
 
@@ -87,20 +109,15 @@ const Github = () => {
   return (
     <Section>
       <SectionTitle>Checkout My Github</SectionTitle>
+      <IconContainer href="https://www.github.com" target="_blank">
+        <GithubIcon />
+      </IconContainer>
       <GithubChart>
         <DatesContainer>
-          <DateMonth>Jan</DateMonth>
-          <DateMonth>Feb</DateMonth>
-          <DateMonth>Mar</DateMonth>
-          <DateMonth>Apr</DateMonth>
-          <DateMonth>May</DateMonth>
-          <DateMonth>Jun</DateMonth>
-          <DateMonth>Jul</DateMonth>
-          <DateMonth>Aug</DateMonth>
-          <DateMonth>Sep</DateMonth>
-          <DateMonth>Oct</DateMonth>
-          <DateMonth>Nov</DateMonth>
-          <DateMonth>Dec</DateMonth>
+          {months.map(month => (
+            <DateMonth key={month}>{month}</DateMonth>
+
+          ))}
         </DatesContainer>
         <BoxContainer>
           {createBoxes()}

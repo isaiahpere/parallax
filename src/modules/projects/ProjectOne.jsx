@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { useWindowPosition } from '../../hooks'
 
 const Section = styled.div` 
   height: 100vh;
@@ -15,6 +16,12 @@ const Phone = styled.div`
   justify-content: flex-end;
   position: relative;
   order: 2;
+
+  @media (min-width: 1440px){
+    ${props => props.position && `
+    transform: translateX(calc(100vh - ${props.position * 0.3}px));
+  `}
+  }
 `
 
 const PhoneCaseContainer = styled.div`
@@ -100,9 +107,10 @@ const Button = styled.button`
 `
 
 const ProjectOne= () => {
+  const position = useWindowPosition()
   return (
     <Section>
-      <Phone>
+      <Phone position={position}>
         <PhoneCaseContainer>
           <PhoneImageContainer>
           <PhoneCase src="./images/phone.png" alt=""/>

@@ -10,26 +10,28 @@ const Container = styled.div`
 
 const Text = styled.h1`
   color: #333;
-  font-size: 55vw;
+  font-size: 60vw;
+  text-align: center;
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
 
-  ${props => props.yOffset && `
-    transform: translateY(${props.yOffset * 1.2}px);
-  `}
+  @media (min-width: 768px){
+    font-size: 55vw;
+    text-align: unset;
+  }
 
   @media (min-width: 1440px){
     padding-top: 60px;
+    ${props => props.yOffset && `
+    transform: translateY(${props.yOffset * 1.2}px);
+  `}
   }
 `;
 
 const GreetText = () => {
-
   const scrollPosition = useWindowPosition()
-  console.log(scrollPosition)
-  
 
   return (
     <Container>
