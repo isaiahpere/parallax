@@ -13,8 +13,8 @@ const App = () => {
   return (
     <Container>
       <Intro />
-      {/* <Projects />
-      <Github /> */}
+       <Projects /> 
+      <Github /> 
     </Container>
   );
 };

@@ -2,9 +2,18 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 const Section = styled.div` 
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  @media (min-width: 1024px){
+    height: 100vh;
+    flex-direction: row;
+    margin: 0;
+  }
  
 `
 
@@ -12,11 +21,15 @@ const Phone = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   width: 200px;
   height: 400px;
   order: 2;
+
+  @media (min-width: 768px){
+    justify-content: flex-center;
+  }
 `
 
 const PhoneContainer = styled.div`
@@ -49,9 +62,14 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
   order: 1;
   color: #757171;
+
+  @media (min-width: 768px){
+    padding: 0;
+    gap: 50px;
+  }
 `
 
 const DetailsTitle = styled.h1`
@@ -60,9 +78,15 @@ const DetailsTitle = styled.h1`
 `
 
 const Description = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   text-align: justify;
-  line-height: 30px;
+  line-height: 16px;
+
+  @media (min-width: 768px){
+    font-size: 16px;
+    text-align: justify;
+    line-height: 30px;
+  }
 `
 
 const Button = styled.button`
@@ -73,6 +97,7 @@ const Button = styled.button`
   color: #555;
   overflow: hidden;
   cursor: pointer;
+  margin: 30px 0px;
 
   &::after {
     content: "View Demo";
@@ -90,6 +115,10 @@ const Button = styled.button`
 
   &:hover::after{
     left: 0;
+  }
+
+  @media (min-width: 1024px){
+    margin: 0;
   }
 `
 

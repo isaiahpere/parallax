@@ -3,23 +3,31 @@ import styled from 'styled-components/macro'
 import { useWindowPosition } from '../../hooks'
 
 const Section = styled.div` 
-  height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  overflow: hidden;
  
+  @media (min-width: 1024px){
+    height: 100vh;
+    flex-direction: row;
+    margin: 0;
+  }
 `
 
 const Phone = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   order: 2;
 
   @media (min-width: 1440px){
+    justify-content: flex-start;
     ${props => props.position && `
-    transform: translateX(calc(100vh - ${props.position * 0.3}px));
+    transform: translateX(calc(${props.position * 0.7}px));
   `}
   }
 `
@@ -34,8 +42,9 @@ const PhoneImageContainer= styled.div`
 `
 
 const PhoneCase = styled.img`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  
 `
 
 const ScreenContainer = styled.div`
@@ -52,6 +61,7 @@ const ScreenContainer = styled.div`
   &::-webkit-scrollbar{
     display: none;
   }
+  
 `
 
 const ScreenImage = styled.img`
@@ -63,9 +73,15 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
   order: 1;
   color: #757171;
+  padding-top: 10px;
+
+  @media (min-width: 768px){
+    padding: 0;
+    gap: 50px;
+  }
 `
 
 const DetailsTitle = styled.h1`
@@ -73,9 +89,15 @@ const DetailsTitle = styled.h1`
 `
 
 const Description = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   text-align: justify;
-  line-height: 30px;
+  line-height: 16px;
+
+
+  @media (min-width: 1024px){
+    font-size: 16px;
+    line-height: 30px;
+  }
 `
 
 const Button = styled.button`
@@ -86,6 +108,7 @@ const Button = styled.button`
   color: #555;
   overflow: hidden;
   cursor: pointer;
+  margin: 30px 0px;
 
   &::after {
     content: "View Demo";
@@ -103,6 +126,10 @@ const Button = styled.button`
 
   &:hover::after{
     left: 0;
+  }
+
+  @media (min-width: 1024px){
+    margin: 0;
   }
 `
 

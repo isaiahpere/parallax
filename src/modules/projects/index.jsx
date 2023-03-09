@@ -9,18 +9,25 @@ import ProjectTwo from "./ProjectTwo";
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 30vh;
-  padding: 0px 60px;
-  /* overflow: hidden; */
+  gap: 5vh;
+  padding: 0px 30px;
+
+  @media (min-width: 1024px){
+    padding: 0px 60px;
+    gap: 15vh;
+  }
 `;
 
 const SectionTitle = styled.h1`
   padding-top: 60px;
-  font-size: 10vw;
+  font-size: 8vw;
   color: #686868;
-  ${props => props.position && `
-    transform: translateY(calc(100vh - ${props.position * 0.3}px));
-  `}
+
+  @media (min-width: 1440px){
+  /* ${props => props.position && `
+    transform: translateY(${props.position * 0.4}px);
+  `} */
+  }
 `
 
 const Projects = () => {
