@@ -21,13 +21,6 @@ const Text = styled.h1`
     font-size: 55vw;
     text-align: unset;
   }
-
-  @media (min-width: 1440px){
-    padding-top: 60px;
-    ${props => props.yOffset && `
-    transform: translateY(${props.yOffset * 1.2}px);
-  `}
-  }
 `;
 
 const GreetText = () => {

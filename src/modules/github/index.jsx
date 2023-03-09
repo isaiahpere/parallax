@@ -7,14 +7,20 @@ import { boxList } from "../../data/box";
 import { months } from "../../data/box";
 
 const Section = styled.section`
-  height: 100vh;
+  
   background-color: #302f2f;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 30px;
   flex-direction: column;
   color: #625d5d;
+  padding: 20px 0px;
+  @media (min-width: 768px){
+    text-align: unset;
+    height: 100vh;
+  }
 `;
 
 const SectionTitle = styled.h1`

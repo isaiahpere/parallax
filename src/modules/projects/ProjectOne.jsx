@@ -27,7 +27,7 @@ const Phone = styled.div`
   @media (min-width: 1440px){
     justify-content: flex-start;
     ${props => props.position && `
-    transform: translateX(calc(${props.position * 0.7}px));
+    transform: translateX(calc(340vh - ${props.position * 0.8}px));
   `}
   }
 `

@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import { useWindowPosition } from '../../hooks'
 
 const Section = styled.div` 
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   display: none;
@@ -25,7 +24,7 @@ const Laptop = styled.div`
 
   @media (min-width: 1440px){
   ${props => props.position && `
-    transform: translateX(calc(-100vh + ${props.position * 0.4}px));
+    transform: translateX(calc(-280vh + ${props.position * 0.6}px));
   `}
   }
 `
