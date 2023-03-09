@@ -4,8 +4,11 @@ import { useWindowPosition } from "../../hooks";
 
 const Container = styled.div`
   flex: 1;
-  width: 100%;
+  width: 60%;
 
+  @media (min-width: 768px){
+    width: 100%;
+  }
 
   @media (min-width: 1440px){
     ${props => props.yPosition && `

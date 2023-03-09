@@ -26,8 +26,8 @@ const Intro = () => {
         <GreetText />
         <GreetImage />
       </Greet>
-      {/* <Name />
-      <Job /> */}
+      <Name />
+      <Job />
     </Section>
   );
 };
